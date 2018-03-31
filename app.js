@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({"extended": "false"}));
 app.use(express.static(path.join(__dirname, "dist")));
 
-app.use("/places", placeRoutes);
+app.use("/api/places", placeRoutes);
 app.use("/", indexRoutes);
 
 // error handler
