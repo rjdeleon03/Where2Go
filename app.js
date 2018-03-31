@@ -10,8 +10,9 @@ var placeRoutes = require("./routes/place");
 var app = express();
 
 // Setup database
+var databaseUrl = process.env.DATABASE_URL || "mongodb://localhost:27017/where2go";
 mongoose.Promise = require("bluebird");
-mongoose.connect("mongodb://localhost:27017/where2go", {
+mongoose.connect(databaseUrl, {
         promiseLibrary: require("bluebird")
     })
     .then(() => console.log("MongoDB connection successful!"))
