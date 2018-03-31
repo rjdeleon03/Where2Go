@@ -26,9 +26,7 @@ app.use(express.static(path.join(__dirname, "dist")));
 app.use("/api/places", placeRoutes);
 
 // Always render Angular page
-app.get('*', function(req, res) {
-    res.sendfile('./dist/index.html')
-});
+app.use("*", express.static(path.join(__dirname, "dist")));
 
 // error handler
 app.use(function(err, req, res, next) {
