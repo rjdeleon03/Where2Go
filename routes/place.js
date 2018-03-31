@@ -48,7 +48,8 @@ router.put("/:id", function(req, res, next) {
 
 // Delete place
 router.delete("/:id", function(req, res, next) {
-    Place.findByIdAndRemove(function(err, removedPlace) {
+    var id = req.params.id;
+    Place.findByIdAndRemove(id, function(err, removedPlace) {
         if (err) {
             return res.status(404).send(err);
         }

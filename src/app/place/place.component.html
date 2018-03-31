@@ -3,5 +3,8 @@
   <a  [routerLink]="['/places/new']" class="ui green button">Add Place</a>
   <li *ngFor="let place of places">
     {{ place.name }}
+    <a [routerLink]="['/places/', place._id]">
+      Read More
+    </a>
   </li>
 </div>

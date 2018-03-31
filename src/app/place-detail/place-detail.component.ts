@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -11,7 +11,7 @@ export class PlaceDetailComponent implements OnInit {
 
   place = {};
   
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit() {
     this.getPlaceDetail(this.route.snapshot.params["id"]);
@@ -21,6 +21,16 @@ export class PlaceDetailComponent implements OnInit {
     this.http.get("/api/places/" + id).subscribe(
       data => {
         this.place = data;
+      }
+    );
+  }
+
+  deletePlace(id) {
+    this.http.delete("/api/places/" + id).subscribe(
+      res => {
+        this.router.navigate(["/places"]);
+      }, err => {
+        console.log(err);
       }
     );
   }
