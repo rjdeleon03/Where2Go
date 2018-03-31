@@ -7,8 +7,15 @@ import { RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { PlaceComponent } from './place/place.component';
 import { PlaceDetailComponent } from './place-detail/place-detail.component';
+import { PlaceNewComponent } from './place-new/place-new.component';
 
 const appRoutes: Routes = [
+  {
+    path: "places/new",
+    component: PlaceNewComponent,
+    data: { title: "Add New Place"},
+    pathMatch: "full"
+  },
   {
     path: "places",
     component: PlaceComponent,
@@ -30,7 +37,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     PlaceComponent,
-    PlaceDetailComponent
+    PlaceDetailComponent,
+    PlaceNewComponent
   ],
   imports: [
     BrowserModule,
