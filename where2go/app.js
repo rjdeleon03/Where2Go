@@ -3,9 +3,18 @@ var path        = require("path");
 var favicon     = require("serve-favicon");
 var logger      = require("morgan");
 var bodyParser  = require("body-parser");
+var mongoose    = require("mongoose");
 
 var indexRoutes = require("./routes/index");
 var app = express();
+
+// Setup database
+mongoose.Promise = require("bluebird");
+mongoose.connect("mongodb://localhost/where2go", {
+        promiseLibrary: require("bluebird")
+    })
+    .then(() => console.log("MongoDB connection successful!"))
+    .catch((err) => console.error(err));
 
 app.use(logger("dev"));
 app.use(bodyParser.json());
