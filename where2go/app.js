@@ -4,7 +4,7 @@ var favicon     = require("serve-favicon");
 var logger      = require("morgan");
 var bodyParser  = require("body-parser");
 
-// var bookRoute = require("./routes/book");
+var indexRoutes = require("./routes/index");
 var app = express();
 
 app.use(logger("dev"));
@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({"extended": "false"}));
 app.use(express.static(path.join(__dirname, "dist")));
 
-// app.use("/book", bookRoute);
+app.use("/", indexRoutes);
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -23,6 +23,6 @@ app.use(function(err, req, res, next) {
     // render the error page
     res.status(err.status || 500);
     res.render('error');
-  });
+});
   
 module.exports = app;
