@@ -22,12 +22,15 @@ app.set("view engine", "ejs");
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({"extended": "false"}));
-app.use(express.static(path.join(__dirname, "dist")));
+
+// Construct and use path to Angular page
+var angularDist = __dirname + "/dist/";
+app.use(express.static(angularDist));
 
 app.use("/api/places", placeRoutes);
 
 // Always render Angular page
-app.use("*", express.static(path.join(__dirname, "dist")));
+app.use("*", express.static(angularDist));
 
 // error handler
 app.use(function(err, req, res, next) {
