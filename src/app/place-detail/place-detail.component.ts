@@ -18,7 +18,6 @@ export class PlaceDetailComponent implements OnInit {
   }
 
   getPlaceDetail(id) {
-    console.log(id);
     this.http.get("/api/places/" + id).subscribe(
       data => {
         this.place = data;

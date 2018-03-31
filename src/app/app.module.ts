@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PlaceComponent } from './place/place.component';
 import { PlaceDetailComponent } from './place-detail/place-detail.component';
 import { PlaceNewComponent } from './place-new/place-new.component';
+import { PlaceEditComponent } from './place-edit/place-edit.component';
 
 const appRoutes: Routes = [
   {
@@ -15,6 +16,11 @@ const appRoutes: Routes = [
     component: PlaceNewComponent,
     data: { title: "Add New Place"},
     pathMatch: "full"
+  },
+  {
+    path: "places/:id/edit",
+    component: PlaceEditComponent,
+    data: { title: "Edit Place"},
   },
   {
     path: "places",
@@ -38,7 +44,8 @@ const appRoutes: Routes = [
     AppComponent,
     PlaceComponent,
     PlaceDetailComponent,
-    PlaceNewComponent
+    PlaceNewComponent,
+    PlaceEditComponent
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,6 @@ export class PlaceNewComponent implements OnInit {
   }
 
   savePlace() {
-    console.log(this.place);
     this.http.post("/api/places", this.place).subscribe(
       res => {
 
