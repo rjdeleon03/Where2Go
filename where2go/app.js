@@ -6,6 +6,7 @@ var bodyParser  = require("body-parser");
 var mongoose    = require("mongoose");
 
 var indexRoutes = require("./routes/index");
+var placeRoutes = require("./routes/place");
 var app = express();
 
 // Setup database
@@ -21,6 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({"extended": "false"}));
 app.use(express.static(path.join(__dirname, "dist")));
 
+app.use("/places", placeRoutes);
 app.use("/", indexRoutes);
 
 // error handler
