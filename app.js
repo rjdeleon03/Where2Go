@@ -24,7 +24,11 @@ app.use(bodyParser.urlencoded({"extended": "false"}));
 app.use(express.static(path.join(__dirname, "dist")));
 
 app.use("/api/places", placeRoutes);
-app.use("/", indexRoutes);
+
+// Always render Angular page
+app.get('*', function(req, res) {
+    res.sendfile('./dist/index.html')
+});
 
 // error handler
 app.use(function(err, req, res, next) {
