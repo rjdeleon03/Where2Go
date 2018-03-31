@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"npm run serve-api\" \"npm run serve\"",
+    "start": "node ./bin/www",
+    "startconcurrent": "concurrently \"npm run serve-api\" \"npm run serve\"",
     "serve": "ng build --watch",
     "serve-api": "nodemon ./bin/www --watch server",
     "start-old": "ng serve",
