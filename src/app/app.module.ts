@@ -6,12 +6,18 @@ import { RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PlaceComponent } from './place/place.component';
+import { PlaceDetailComponent } from './place-detail/place-detail.component';
 
 const appRoutes: Routes = [
   {
     path: "places",
     component: PlaceComponent,
     data: { title: "Places" }
+  },
+  {
+    path: "places/:id",
+    component: PlaceDetailComponent,
+    data: { title: "Book Details"}
   },
   {
     path: "",
@@ -23,7 +29,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    PlaceComponent
+    PlaceComponent,
+    PlaceDetailComponent
   ],
   imports: [
     BrowserModule,
