@@ -1,4 +1,11 @@
-.ui.stackable.four.column.grid .column {
+#banner {
+    background: gold;
+    height: 50vh;
+    min-height: 250px;
+    max-height: 600px;
+}
+
+#place-div {
     margin: 0;
     padding: 0;
     height: 15vw;
@@ -8,7 +15,7 @@
 }
 
 @media (max-width: 767px) {
-    .ui.stackable.four.column.grid .column {
+    #place-div {
         margin: 0;
         padding: 0 !important;
         height: 35vw;

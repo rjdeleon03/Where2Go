@@ -1,7 +1,10 @@
-<div class="ui container">
+<div id="banner">
+
+</div>
+<div class="container">
   <h1>Places</h1>
-  <div class="ui stackable four column grid">
-    <div class="column" *ngFor="let place of places" [ngStyle]="{'background':'url(' + place.imageUrl + ')'}">      
+  <div class="row">
+    <div id="place-div" class="col-md-3 col-sm-6 col-12" *ngFor="let place of places" [ngStyle]="{'background':'url(' + place.imageUrl + ')'}">      
       <a [routerLink]="['/places/', place._id]" class="ui basic button">
         Read More
       </a>
