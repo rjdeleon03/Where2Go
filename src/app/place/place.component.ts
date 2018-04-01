@@ -16,5 +16,4 @@ export class PlaceComponent implements OnInit {
       this.places = data;
     });
   }
-
 }

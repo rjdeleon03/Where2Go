@@ -1,10 +1,10 @@
 <div class="ui container">
-  <h1>Place List</h1>
-  <a  [routerLink]="['/places/new']" class="ui green button">Add Place</a>
-  <li *ngFor="let place of places">
-    {{ place.name }}
-    <a [routerLink]="['/places/', place._id]">
-      Read More
-    </a>
-  </li>
+  <h1>Places</h1>
+  <div class="ui stackable four column grid">
+    <div class="column" *ngFor="let place of places" [ngStyle]="{'background':'url(' + place.imageUrl + ')'}">      
+      <a [routerLink]="['/places/', place._id]" class="ui basic button">
+        Read More
+      </a>
+    </div>
+  </div>
 </div>

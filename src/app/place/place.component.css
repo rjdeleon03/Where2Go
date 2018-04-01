@@ -1,0 +1,21 @@
+.ui.stackable.four.column.grid .column {
+    margin: 0;
+    padding: 0;
+    height: 15vw;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+@media (max-width: 767px) {
+    .ui.stackable.four.column.grid .column {
+        margin: 0;
+        padding: 0 !important;
+        height: 35vw;
+    }    
+}
+
+img {
+    width: 100%;
+    display: block;
+}
