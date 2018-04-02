@@ -2,12 +2,12 @@
   <h1>{{ place.name }}</h1>
 
   <!-- Link to edit -->
-  <a [routerLink]="['/places', place._id, 'edit']" class="ui button yellow">
+  <a [routerLink]="['/places', place.id, 'edit']" class="ui button yellow">
     Edit
   </a>
 
   <!-- Link to delete -->
-  <button class="ui button red" (click)="deletePlace(place._id)">
+  <button class="ui button red" (click)="deletePlace(place.id)">
     Delete
   </button>
 

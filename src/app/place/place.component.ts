@@ -16,6 +16,7 @@ export class PlaceComponent implements OnInit {
   ngOnInit() {    
     this.placeService.getPlaces().subscribe((places: Place[]) => {
       this.places = places;
+      console.log(places);
     })
   }
 }
