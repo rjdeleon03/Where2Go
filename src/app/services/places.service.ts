@@ -44,4 +44,11 @@ export class PlacesService {
     .catch((error: Response) => { return Observable.throw(error.json())});
   }  
 
+  deletePlace(id) {
+    return this.http.delete("api/places/" + id).map((response: Response) => {
+      console.log(response.json());
+    })
+    .catch((error: Response) => { return Observable.throw(error.json()) });
+  }
+
 }

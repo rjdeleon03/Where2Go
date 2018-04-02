@@ -23,6 +23,7 @@ export class PlaceNewComponent implements OnInit {
       res => {
 
         // When place has been added, redirect to place's page
+        // Get _id field from response
         let id = res["_id"];
         this.router.navigate(["/places", id]);
 

@@ -29,13 +29,11 @@ export class PlaceDetailComponent implements OnInit {
   }
 
   deletePlace(id) {
-    this.http.delete("/api/places/" + id).subscribe(
-      res => {
-        this.router.navigate(["/places"]);
-      }, err => {
-        console.log(err);
-      }
-    );
+    this.placeService.deletePlace(id).subscribe(res => {
+      this.router.navigate(["/places"]);
+    }, err => {
+      console.log(err);
+    });
   }
 
 }
