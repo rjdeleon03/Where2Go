@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Place } from '../../models/place';
 
 import 'rxjs/Rx';
@@ -9,6 +9,15 @@ import { Observable } from "rxjs";
 export class PlacesService {
 
   constructor(private http: Http) { }
+
+  addPlace(newPlace: Place) {
+    const body = JSON.stringify(newPlace);
+    const headers = new Headers({
+      "Content-Type": "application/json"
+    });
+    return this.http.post("/api/places", body, { headers: headers })
+      .map((response: Response) => response.json());
+  }
 
   getPlaces() {
     return this.http.get("/api/places").map((response) => {
@@ -33,6 +42,6 @@ export class PlacesService {
       return new Place(place._id, place.name, place.imageUrl, place.description);
     })
     .catch((error: Response) => { return Observable.throw(error.json())});
-  }
+  }  
 
 }
