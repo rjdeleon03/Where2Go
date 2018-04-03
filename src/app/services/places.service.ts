@@ -51,4 +51,11 @@ export class PlacesService {
     .catch((error: Response) => { return Observable.throw(error.json()) });
   }
 
+  editPlace(id, placeToEdit: Place) {
+    return this.http.put("api/places/" + id, placeToEdit).map((response: Response) => {
+      return response.json();
+    })
+    .catch((error: Response) => { return Observable.throw(error.json()) });
+  }
+
 }

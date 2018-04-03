@@ -11,7 +11,7 @@ import { Place } from '../../models/place';
 })
 export class PlaceNewComponent implements OnInit {
 
-  place = new Place("","","","");
+  place = new Place();
 
   constructor(private http: HttpClient, private router: Router, private placeService: PlacesService) { }
 
