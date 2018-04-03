@@ -1,8 +1,12 @@
 #banner {
-    background: gold;
-    height: 50vh;
+    background: url(https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd27a515bce2dade58bc288fde28f290&auto=format&fit=crop&w=1693&q=80);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    height: 60vh;
     min-height: 250px;
-    max-height: 600px;
+    max-height: 800px;
 }
 
 .container {
