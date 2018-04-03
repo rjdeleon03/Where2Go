@@ -5,6 +5,10 @@
     max-height: 600px;
 }
 
+.container {
+    margin: 50px auto;
+}
+
 #place-div {
     margin: 0;
     padding: 0;
