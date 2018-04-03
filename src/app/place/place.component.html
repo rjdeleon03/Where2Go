@@ -5,7 +5,7 @@
   <h1>Places</h1>
   <div class="row">
     <div id="place-div" class="col-md-3 col-sm-6 col-12" *ngFor="let place of places" [ngStyle]="{'background':'url(' + place.imageUrl + ')'}">      
-      <a [routerLink]="['/places/', place._id]" class="ui basic button">
+      <a [routerLink]="['/places/', place.id]" class="ui basic button">
         Read More
       </a>
     </div>

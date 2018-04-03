@@ -9,6 +9,8 @@ import { PlaceComponent } from './place/place.component';
 import { PlaceDetailComponent } from './place-detail/place-detail.component';
 import { PlaceNewComponent } from './place-new/place-new.component';
 import { PlaceEditComponent } from './place-edit/place-edit.component';
+import { PlacesService } from './services/places.service';
+import { HttpModule } from '@angular/http';
 
 const appRoutes: Routes = [
   {
@@ -50,12 +52,15 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes, {enableTracing: true}
     )
   ],
-  providers: [],
+  providers: [
+    PlacesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
